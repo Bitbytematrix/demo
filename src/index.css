@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #faf7f2;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-display text-4xl md:text-5xl font-semibold text-forest-900 mb-4;
+  }
+
+  .section-subheading {
+    @apply text-gold-500 uppercase tracking-[0.2em] text-sm font-semibold font-body mb-3;
+  }
+
+  .btn-primary {
+    @apply bg-gold-500 hover:bg-gold-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 font-body tracking-wide;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white hover:text-forest-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg font-body tracking-wide;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg rounded-2xl;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f7f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c;
+  border-radius: 3px;
+}
+
+/* Fade animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold divider */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a84c, #e8d5a3);
+  border-radius: 2px;
+}
+
+/* Lotus pattern subtle background */
+.lotus-bg {
+  background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.04) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(61,130,101,0.06) 0%, transparent 50%);
+}
